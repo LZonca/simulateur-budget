@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('privileges', function (Blueprint $table) {
             $table->id('privileges_id');
             $table->string('privileges_nom');
+            $table->timestamps();
         });
     }
 

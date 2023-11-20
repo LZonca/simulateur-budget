@@ -17,7 +17,7 @@
                 <div class="menu collapse navbar-collapse col-10" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="?accueil">ACCUEIL <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="?accueil">ACCUEIL<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link " href="?presentation">PRESENTATION</a>

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('pays');
             $table->integer('tel');
+            $table->foreignId('privileges_id')->constrained();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();

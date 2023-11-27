@@ -1,59 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Connexion</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-
+    <title>Inscription</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/img1.jpg');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+<body class="bg-gradient-to-r from-blue-500 to-purple-500 min-h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('images/img4.png');">
 
-					<span class="login100-form-title p-b-34 p-t-27">
-						Inscription
-					</span>
+    <div class="w-full sm:w-96 bg-white p-8 rounded-lg shadow-md">
+        <h1 class="text-3xl font-semibold text-center mb-6 text-gray-800">Inscription</h1>
 
-					<div class="wrap-input100" data-validate = "Entrez votre pseudo">
-						<input class="input100" type="text" name="username" placeholder="Identifiant">
-						<span class="focus-input100"></span>
-					</div>
+        <form class="space-y-4">
 
-					<div class="wrap-input100" data-validate="Entrez votre mot de passe">
-						<input class="input100" type="password" name="pass" placeholder="Mot de passe">
-						<span class="focus-input100"></span>
-					</div>
+            <div class="relative">
+                <input class="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-blue-500" type="text" name="username" placeholder="Identifiant" />
+            </div>
 
-					<div class="wrap-input100" data-validate="Entrez votre mot de passe">
-						<input class="input100" type="password" name="pass" placeholder="Confirmation du mot de passe">
-						<span class="focus-input100"></span>
-					</div>
+            <div class="relative">
+                <input class="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-blue-500" type="password" name="pass" placeholder="Mot de passe" />
+            </div>
 
-					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Se rappeler de moi
-						</label><br>
-					</div>
+			<div class="relative">
+                <input class="w-full border-2 border-gray-300 p-3 rounded-md focus:outline-none focus:border-blue-500" type="password" name="pass2" placeholder="Confirmation du mot de passe" />
+            </div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Inscription
-						</button><br><br><br><br><br>
-					</div>
+            <div class="flex items-center">
+                <input class="mr-2" id="ckb1" type="checkbox" name="remember-me">
+                <label for="ckb1" class="text-gray-700">Se rappeler de moi</label>
+            </div>
 
-					<div class="registration-button">
-                        <a href="../connexion/connexion.html" class="registration-button">Vous possédez déjà un compte?</a>
-                    </div>
+            <button class="w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white p-3 rounded-md hover:from-blue-600 hover:to-purple-600 transition duration-300">
+                Inscription
+            </button>
 
-				</form>
-			</div>
-		</div>
-	</div>
+        </form>
+
+        <div class="mt-6 text-center">
+            <a href="../connexion/connexion.html" class="text-blue-500">Vous avez déjà un compte ?</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
 </body>
 </html>

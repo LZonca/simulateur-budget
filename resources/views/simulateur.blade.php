@@ -3,10 +3,10 @@
 
 
     <x-slot name="header">
-        <h1 class="text-2xl font-semibold mt-16">Simulateur de Budget</h1>
+        <h1 class="text-2xl font-semibold mt-12">Simulateur de Budget</h1>
     </x-slot>
 
-    <main class="max-w-6xl mx-auto my-8 p-6 bg-white shadow-md">
+    <main class="max-w-6xl my-14 p-6 mx-auto bg-white shadow-md">
 
         <p class="text-gray-700">Le simulateur de la mairie de la ville d'Arnas a pour but de permettre aux habitants de
             la ville de proposer un budget qui sera alloué à la préparation de projets futurs au sein de la ville.</p>

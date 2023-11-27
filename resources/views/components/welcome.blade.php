@@ -1,6 +1,6 @@
 
 <x-slot name="header">
-    <h1 class="text-2xl font-semibold mt-16">Bienvenue à la Mairie d'Arnas</h1>
+    <h1 class="text-2xl font-semibold mt-12">Bienvenue à la Mairie d'Arnas</h1>
 </x-slot>
 
 <main class="mx-10 bg-white ">
@@ -26,6 +26,5 @@
             pour des projets qui façonnent l'avenir de notre ville.</p>
     </section>
 </main>
-<x-footer/>
 
 

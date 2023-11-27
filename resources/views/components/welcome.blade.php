@@ -21,7 +21,7 @@
     </section>
     <section class="mt-8">
         <h2 class="text-2xl font-semibold mb-4">Engagement Communautaire</h2>
-        <p class="text-gray-700">Nous croyons en la participation active des citoyens dans la prise de décision. Le
+        <p class="text-gray-700 mb-10">Nous croyons en la participation active des citoyens dans la prise de décision. Le
             simulateur de budget est l'une de nos initiatives pour permettre aux habitants de proposer et de voter
             pour des projets qui façonnent l'avenir de notre ville.</p>
     </section>

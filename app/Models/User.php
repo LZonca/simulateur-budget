@@ -64,4 +64,8 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function simulations(){
+        return $this->belongsTo(Simulation::class);
+    }
 }

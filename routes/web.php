@@ -22,6 +22,9 @@ Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur')
 
 Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
 
+Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
+
+
 
 
 Route::middleware([

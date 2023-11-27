@@ -1,8 +1,9 @@
+
 <x-slot name="header">
-    <h1 class="text-2xl font-semibold">Bienvenue à la Mairie d'Arnas</h1>
+    <h1 class="text-2xl font-semibold mt-12">Bienvenue à la Mairie d'Arnas</h1>
 </x-slot>
 
-<main class="max-w-2xl mx-auto my-8 p-6 bg-white shadow-md">
+<main class="mx-10 bg-white ">
     <section>
         <h2 class="text-2xl font-semibold mb-4">Présentation de la Mairie</h2>
         <p class="text-gray-700">La mairie d'Arnas est au service de la communauté pour assurer le bien-être et le
@@ -20,9 +21,10 @@
     </section>
     <section class="mt-8">
         <h2 class="text-2xl font-semibold mb-4">Engagement Communautaire</h2>
-        <p class="text-gray-700">Nous croyons en la participation active des citoyens dans la prise de décision. Le
+        <p class="text-gray-700 mb-10">Nous croyons en la participation active des citoyens dans la prise de décision. Le
             simulateur de budget est l'une de nos initiatives pour permettre aux habitants de proposer et de voter
             pour des projets qui façonnent l'avenir de notre ville.</p>
     </section>
 </main>
-<x-footer/>
+
+

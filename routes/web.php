@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
+
+Route::get('/resultat', [Controller::class, 'resultat'])->name('resultat');
+
+
 
 Route::middleware([
     'auth:sanctum',

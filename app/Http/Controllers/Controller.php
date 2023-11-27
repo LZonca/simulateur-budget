@@ -14,7 +14,7 @@ class Controller extends BaseController
         return view('simulateur');
     }
 
-    public function resultat(){
-        return view('resultat');
+    public function resultats(){
+        return view('resultats');
     }
 }

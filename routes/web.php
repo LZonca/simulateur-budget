@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
 
-Route::get('/resultat', [Controller::class, 'resultat'])->name('resultat');
+Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
 
 
 

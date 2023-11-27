@@ -10,7 +10,7 @@
 <body class="font-sans bg-gray-100">
 
     <header class="bg-green-600 text-white py-4">
-        <h1 class="text-2xl font-semibold">Simulateur de Budget</h1>
+        <h1 class="text-2xl text-center font-semibold">Simulateur de Budget</h1>
     </header>
 
     <main class="max-w-2xl mx-auto my-8 p-6 bg-white shadow-md">

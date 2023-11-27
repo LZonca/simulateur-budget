@@ -17,4 +17,8 @@ class Controller extends BaseController
     public function resultats(){
         return view('resultats');
     }
+
+    public function pannel(){
+        return view('pannel');
+    }
 }

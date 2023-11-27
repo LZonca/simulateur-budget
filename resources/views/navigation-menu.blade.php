@@ -23,6 +23,11 @@
                             {{ __('Vos résultats') }}
                         </x-nav-link>
                     @endif
+                    @if (auth()->user()->privileges_id == 2)
+                        <x-nav-link href="{{ route('pannel') }}" :active="request()->routeIs('pannel')">
+                            {{ __('Admin pannel') }}
+                        </x-nav-link>
+                    @endif
 
                 </div>
             </div>

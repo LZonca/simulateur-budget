@@ -1,7 +1,7 @@
 
 <x-app-layout>
-    
-    
+
+
     <x-slot name="header">
         <h1 class="text-2xl font-semibold mt-16">Simulateur de Budget</h1>
     </x-slot>

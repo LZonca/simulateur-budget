@@ -33,6 +33,7 @@ class User extends Authenticatable
         'pays',
         'tel',
         'password',
+        'privileges_id',
     ];
 
     /**

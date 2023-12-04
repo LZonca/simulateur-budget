@@ -15,7 +15,7 @@
     
             <div class="ml-4">
                 <input type="text" wire:model="nouvelles_sous_categories.{{ $category->id }}" placeholder="Nouvelle sous-catégorie">
-                <button wire:click="addNewSubCategory({{ $category->id }})">Ajouter Sous-catégorie</button>
+                <button wire:click="addNewSubCategory({{ $category->id }})" class="p-10 m-10 border bg-black text-white rounded-lg py-3 font-semibold hover:bg-green-600">Ajouter Sous-catégorie</button>
             </div>
         </div>
     @endforeach

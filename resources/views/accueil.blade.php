@@ -5,5 +5,4 @@
     </div>
     <br>
     <x-welcome/>
-    <x-footer/>
 </x-guest-layout>

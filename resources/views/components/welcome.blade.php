@@ -1,4 +1,6 @@
 
+
+
 <x-slot name="header">
     <div class="flex items-center">
         <img src="{{ asset('/img/arnas_img.png') }}" alt="Logo" class="mr-25 w-70 h-20">
@@ -40,4 +42,4 @@
     </section>
 </main>
 
-
+    <x-footer />

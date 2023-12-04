@@ -18,11 +18,7 @@ Route::get('/', function () {
     return view('accueil');
 });
 
-Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
 
-Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
-
-Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
 
 Route::get('/pasco', function(){
     return view('pasco');
@@ -36,7 +32,12 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
 
+    Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
+
+    Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
+    
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

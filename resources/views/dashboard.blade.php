@@ -6,7 +6,6 @@
                 <x-welcome />
             </div>
         </div>
-        
+
     </div>
-    <x-footer/>
 </x-app-layout>

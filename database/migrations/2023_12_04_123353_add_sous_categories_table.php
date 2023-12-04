@@ -9,12 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    
     public function up(): void
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('categorie_nom');
-            $table->string('categorie_img');
+        Schema::create('sous_categories', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('sous_categorie_nom');
+            $table->foreignId('categorie_id')->constrained();
             $table->timestamps();
         });
     }
@@ -22,8 +23,9 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+
     public function down(): void
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('sous_categories');
     }
 };

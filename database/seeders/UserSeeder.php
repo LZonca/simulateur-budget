@@ -52,5 +52,18 @@ class UserSeeder extends Seeder
         $u->privileges_id = 2;
         $u->password = hash::make("admin1");
         $u->save();
+
+        $u = new User();
+        $u->name = "superadmin1";
+        $u->prenom = "superadmin1";
+        $u->email = "superadmin1@gmail.com";
+        $u->adresse = "adresse4";
+        $u->codePostal = "codePostal4";
+        $u->ville = "ville4";
+        $u->pays = "pays4";
+        $u->tel = "0000000004";
+        $u->privileges_id = 3;
+        $u->password = hash::make("admin1");
+        $u->save();
     }
 }

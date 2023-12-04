@@ -1,30 +1,28 @@
 
-<x-slot name="header">
-    <h1 class="text-2xl font-semibold mt-12 text-center">Bienvenue à la Mairie d'Arnas</h1>
-</x-slot>
 
-<main class="mx-10 bg-white ">
-    <section>
-        <h2 class="text-2xl font-semibold mb-4">Présentation de la Mairie</h2>
-        <p class="text-gray-700">La mairie d'Arnas est au service de la communauté pour assurer le bien-être et le
-            développement de la ville. Nous sommes dédiés à la transparence, à l'efficacité et à la participation
-            citoyenne.</p>
-    </section>
-    <section class="mt-8">
-        <h2 class="text-2xl font-semibold mb-4">Nos Services</h2>
-        <ul class="list-disc pl-6 text-gray-700">
-            <li>Administration municipale</li>
-            <li>Gestion des services publics</li>
-            <li>Projets communautaires</li>
-            <li>Événements locaux</li>
+
+    <x-slot name="header">
+        <h1 class="text-2xl font-semibold mt-12 text-center">Simulateur de Budget</h1>
+    </x-slot>
+
+    <main class="max-w-6xl my-14 p-6 mx-auto bg-white shadow-md">
+
+        <p class="text-gray-700">Le simulateur de la mairie de la ville d'Arnas a pour but de permettre aux habitants de
+            la ville de proposer un budget qui sera alloué à la préparation de projets futurs au sein de la ville.</p>
+
+        <h2 class="text-xl font-semibold mt-8">Fonctionnalités du simulateur :</h2>
+        <ul class="list-disc pl-6 mt-4 text-gray-700">
+            <li>Proposez des budgets pour des projets importants dans votre ville.</li>
+            <li>Votez pour les projets que vous trouvez les plus pertinents.</li>
+            <li>Suivez l'avancement des projets financés par la communauté.</li>
         </ul>
-    </section>
-    <section class="mt-8">
-        <h2 class="text-2xl font-semibold mb-4">Engagement Communautaire</h2>
-        <p class="text-gray-700 mb-10">Nous croyons en la participation active des citoyens dans la prise de décision. Le
-            simulateur de budget est l'une de nos initiatives pour permettre aux habitants de proposer et de voter
-            pour des projets qui façonnent l'avenir de notre ville.</p>
-    </section>
-</main>
 
+        <h2 class="text-xl font-semibold mt-8">Comment ça fonctionne :</h2>
+        <p class="text-gray-700">1. Proposez un budget en décrivant votre projet et en spécifiant le montant nécessaire.
+        </p>
+        <p class="text-gray-700">2. Les habitants votent pour les projets qu'ils soutiennent.</p>
+        <p class="text-gray-700">3. Les projets les plus votés reçoivent un financement de la mairie.</p><br><br><br>
 
+    </main>
+
+    <x-footer />

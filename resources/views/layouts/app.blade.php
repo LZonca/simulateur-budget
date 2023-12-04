@@ -41,5 +41,6 @@
         @stack('modals')
 
         @livewireScripts
+        {{-- <p>Hello world!</p> --}}
     </body>
 </html>

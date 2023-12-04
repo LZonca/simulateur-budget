@@ -42,6 +42,7 @@ class CreateNewUser implements CreatesNewUsers
             'pays' => $input['pays'],
             'tel' => $input['tel'],
             'password' => Hash::make($input['password']),
+            //'privileges_id' => 1,
         ]);
     }
 }

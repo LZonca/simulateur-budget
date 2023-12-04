@@ -10,17 +10,12 @@ class AddCategorie extends Component
 {
     public $categorie_nom;
     public $categorie_img;
-    public $sous_categorie_nom;
-    public $categories; // Assurez-vous que cette propriété est déclarée
-
-    public function mount()
-    {
-        $this->categories = Categorie::with('sousCategories')->get();
-    }
+    public $nouvelles_sous_categories = [];
 
     public function render()
     {
-        return view('livewire.add-categorie');
+        $categories = Categorie::with('sousCategories')->get();
+        return view('livewire.add-categorie', compact('categories'));
     }
 
     public function addCategory()
@@ -31,25 +26,18 @@ class AddCategorie extends Component
         ]);
 
         $this->reset(['categorie_nom', 'categorie_img']);
-        $this->resetCategories();
     }
 
-    public function addSubCategory($categoryId)
+    public function addNewSubCategory($categoryId)
     {
         $this->validate([
-            'sous_categorie_nom' => 'required|string',
+            'nouvelles_sous_categories.' . $categoryId => 'required|string',
         ]);
 
         Categorie::find($categoryId)->sousCategories()->create([
-            'sous_categorie_nom' => $this->sous_categorie_nom,
+            'sous_categorie_nom' => $this->nouvelles_sous_categories[$categoryId],
         ]);
 
-        $this->reset(['sous_categorie_nom']);
-        $this->resetCategories();
-    }
-
-    private function resetCategories()
-    {
-        $this->categories = Categorie::with('sousCategories')->get();
+        $this->reset("nouvelles_sous_categories.$categoryId");
     }
 }

@@ -1,6 +1,6 @@
 
 <x-slot name="header">
-    <h1 class="text-2xl font-semibold mt-12">Bienvenue à la Mairie d'Arnas</h1>
+    <h1 class="text-2xl font-semibold mt-12 text-center">Bienvenue à la Mairie d'Arnas</h1>
 </x-slot>
 
 <main class="mx-10 bg-white ">

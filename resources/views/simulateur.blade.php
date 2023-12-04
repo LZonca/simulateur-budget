@@ -3,7 +3,7 @@
 
 
     <x-slot name="header">
-        <h1 class="text-2xl font-semibold mt-12">Simulateur de Budget</h1>
+        <h1 class="text-2xl font-semibold mt-12 text-center">Simulateur de Budget</h1>
     </x-slot>
 
     <main class="max-w-6xl my-14 p-6 mx-auto bg-white shadow-md">

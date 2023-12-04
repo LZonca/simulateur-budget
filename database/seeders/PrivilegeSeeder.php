@@ -21,5 +21,9 @@ class PrivilegeSeeder extends Seeder
         $p = new Privilege();
         $p->privileges_nom = "admin";
         $p->save();
+
+        $p = new Privilege();
+        $p->privileges_nom = "super-admin";
+        $p->save();
     }
 }

@@ -9,7 +9,7 @@ class Simulation extends Model
 {
     use HasFactory;
 
-    public function owner(){
-        return $this->belongsTo(User::class, 'utilisateur_id');
+    public function simulations(){
+        return $this->belongsTo(SousCategorie::class);
     }
 }

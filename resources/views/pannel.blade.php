@@ -1,4 +1,6 @@
 <x-app-layout>
-
-    <p>admin pannel</p>
+    <x-slot name="header">
+        <h1 class="text-2xl font-semibold mt-12 text-center">Admin</h1>
+    </x-slot>
+    <x-footer/>
 </x-app-layout>

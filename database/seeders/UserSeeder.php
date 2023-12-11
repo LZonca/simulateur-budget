@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville1";
         $u->pays = "pays1";
         $u->tel = "0000000001";
-        $u->privileges_id = 1;
+        // $u->privileges_id = 1;
         $u->password = hash::make("user1");
         $u->save();
 
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville2";
         $u->pays = "pays2";
         $u->tel = "0000000002";
-        $u->privileges_id = 1;
+        // $u->privileges_id = 1;
         $u->password = hash::make("user2");
         $u->save();
 
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville3";
         $u->pays = "pays3";
         $u->tel = "0000000003";
-        $u->privileges_id = 2;
+        // $u->privileges_id = 2;
         $u->password = hash::make("admin1");
         $u->save();
 
@@ -62,7 +62,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville4";
         $u->pays = "pays4";
         $u->tel = "0000000004";
-        $u->privileges_id = 3;
+        // $u->privileges_id = 3;
         $u->password = hash::make("admin1");
         $u->save();
     }

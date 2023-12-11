@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51738f199272eafae5920ac7054c3848",
+    "content-hash": "339fab0771b04c9c2c336f5063fef775",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1046,6 +1046,7 @@
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
                 "source": "https://github.com/guzzle/psr7/tree/2.6.2"
+                "source": "https://github.com/guzzle/psr7/tree/2.6.2"
             },
             "funding": [
                 {
@@ -1062,13 +1063,16 @@
                 }
             ],
             "time": "2023-12-03T20:05:35+00:00"
+            "time": "2023-12-03T20:05:35+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
             "version": "v1.0.3",
+            "version": "v1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/uri-template.git",
+                "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c"
                 "reference": "ecea8feef63bd4fef1f037ecb288386999ecc11c"
             },
             "dist": {
@@ -1418,13 +1422,17 @@
         {
             "name": "laravel/jetstream",
             "version": "v4.1.2",
+            "version": "v4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/jetstream.git",
                 "reference": "252348e46521920ff515f41faa110e28630075f8"
+                "reference": "252348e46521920ff515f41faa110e28630075f8"
             },
             "dist": {
                 "type": "zip",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/252348e46521920ff515f41faa110e28630075f8",
+                "reference": "252348e46521920ff515f41faa110e28630075f8",
                 "url": "https://api.github.com/repos/laravel/jetstream/zipball/252348e46521920ff515f41faa110e28630075f8",
                 "reference": "252348e46521920ff515f41faa110e28630075f8",
                 "shasum": ""
@@ -2384,6 +2392,7 @@
                 "shasum": ""
             },
             "require": {
+                "carbonphp/carbon-doctrine-types": "*",
                 "carbonphp/carbon-doctrine-types": "*",
                 "ext-json": "*",
                 "php": "^7.1.8 || ^8.0",

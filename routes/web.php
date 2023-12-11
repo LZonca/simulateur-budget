@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('accueil');
 });
 
-Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
 
 Route::get('/resultat', [Controller::class, 'resultats'])->name('resultats');
 
@@ -29,6 +28,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
+
+    Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
+
+    Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
 
     Route::get('/dashboard', function () {
         return view('dashboard');

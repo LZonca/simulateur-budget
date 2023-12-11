@@ -1,13 +1,6 @@
 <x-app-layout>
-
     <x-slot name="header">
-        <h1 class="mt-12 text-2xl font-semibold text-center">
-            Admin
-        </h1>
+        <br><h1 class="text-2xl font-semibold m-4 mt-12 text-center">Admin</h1>
     </x-slot>
-    <div>
-        <livewire:add-categorie />
-    </div>
-
+    <livewire:add-categorie />
 </x-app-layout>
-

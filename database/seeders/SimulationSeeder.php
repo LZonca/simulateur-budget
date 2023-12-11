@@ -18,7 +18,6 @@ class SimulationSeeder extends Seeder
          $s->simulations_nom = "simulation1";
          $s->simulations_date = now();
          $s->simulations_resultats = "resultats1";
-         // Make sure the 'utilisateur_id' exists in the 'users' table before assigning it here
          $s->utilisateur_id = 1;
          $s->save();
 
@@ -33,7 +32,6 @@ class SimulationSeeder extends Seeder
          $s->simulations_nom = "simulation3";
          $s->simulations_date = now();
          $s->simulations_resultats = "resultats3";
-         // Make sure the 'utilisateur_id' exists in the 'users' table before assigning it here
          $s->utilisateur_id = 2;
          $s->save();
 
@@ -51,5 +49,6 @@ class SimulationSeeder extends Seeder
          $s->utilisateur_id = 2;
          $s->save();
      }
+
 
 }

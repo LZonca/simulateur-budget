@@ -12,7 +12,16 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @if (env('APP_ENV') == 'local')
+
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        @elseif(env('APP_ENV') == 'prod')
+
+            <link rel='stylesheet' type='text/css' href="./build/assets/app.css">
+            <script src="./build/assets/app.js"></script>
+
+        @endif
         <script type="text/javascript" >localStorage.theme = 'light'</script>
         <!-- Styles -->
         @livewireStyles

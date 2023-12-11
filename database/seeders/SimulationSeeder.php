@@ -12,41 +12,44 @@ class SimulationSeeder extends Seeder
      * Run the database seeds.
      */
 
-    public function run(): void
-    {
-        $s = new Simulation();
-        $s->simulations_nom = "simulation1";
-        $s->simulations_date = now();
-        $s->simulations_resultats = "resultats1";
-        $s->utilisateur_id = 1;
-        $s->save();
+     public function run(): void
+     {
+         $s = new Simulation();
+         $s->simulations_nom = "simulation1";
+         $s->simulations_date = now();
+         $s->simulations_resultats = "resultats1";
+         // Make sure the 'utilisateur_id' exists in the 'users' table before assigning it here
+         $s->utilisateur_id = 1;
+         $s->save();
 
-        $s = new Simulation();
-        $s->simulations_nom = "simulation2";
-        $s->simulations_date = now();
-        $s->simulations_resultats = "resultats2";
-        $s->utilisateur_id = 1;
-        $s->save();
+         $s = new Simulation();
+         $s->simulations_nom = "simulation2";
+         $s->simulations_date = now();
+         $s->simulations_resultats = "resultats2";
+         $s->utilisateur_id = 1;
+         $s->save();
 
-        $s = new Simulation();
-        $s->simulations_nom = "simulation3";
-        $s->simulations_date = now();
-        $s->simulations_resultats = "resultats3";
-        $s->utilisateur_id = 2;
-        $s->save();
+         $s = new Simulation();
+         $s->simulations_nom = "simulation3";
+         $s->simulations_date = now();
+         $s->simulations_resultats = "resultats3";
+         // Make sure the 'utilisateur_id' exists in the 'users' table before assigning it here
+         $s->utilisateur_id = 2;
+         $s->save();
 
-        $s = new Simulation();
-        $s->simulations_nom = "simulation4";
-        $s->simulations_date = now();
-        $s->simulations_resultats = "resultats4";
-        $s->utilisateur_id = 2;
-        $s->save();
+         $s = new Simulation();
+         $s->simulations_nom = "simulation4";
+         $s->simulations_date = now();
+         $s->simulations_resultats = "resultats4";
+         $s->utilisateur_id = 2;
+         $s->save();
 
-        $s = new Simulation();
-        $s->simulations_nom = "simulation5";
-        $s->simulations_date = now();
-        $s->simulations_resultats = "resultats5";
-        $s->utilisateur_id = 2;
-        $s->save();
-    }
+         $s = new Simulation();
+         $s->simulations_nom = "simulation5";
+         $s->simulations_date = now();
+         $s->simulations_resultats = "resultats5";
+         $s->utilisateur_id = 2;
+         $s->save();
+     }
+
 }

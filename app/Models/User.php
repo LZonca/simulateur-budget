@@ -68,6 +68,6 @@ class User extends Authenticatable
     ];
 
     public function simulations(){
-        return $this->belongsTo(Simulation::class);
+        return $this->hasMany(Simulation::class);
     }
 }

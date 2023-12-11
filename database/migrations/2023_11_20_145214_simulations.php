@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('simulations_nom');
             $table->date('simulations_date');
             $table->string('simulations_resultats');
-            $table->foreignId('utilisateur_id')->constrained();
+            $table->foreign('utilisateur_id')->references('id')->on('utilisateurs');
             $table->timestamps();
         });
     }

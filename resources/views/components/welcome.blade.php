@@ -41,5 +41,3 @@
             pour des projets qui façonnent l'avenir de notre ville.</p>
     </section>
 </main>
-
-    <x-footer />

@@ -39,4 +39,7 @@
         @livewireScripts
         {{-- <p>Hello world!</p> --}}
     </body>
+    <footer>
+        <x-footer/>
+    </footer>
 </html>

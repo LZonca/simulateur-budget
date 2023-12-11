@@ -8,4 +8,7 @@
     </div>
     <br>
     <x-welcome />
+    <footer>
+        <x-footer/>
+    </footer>
 </x-guest-layout>

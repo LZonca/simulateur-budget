@@ -19,11 +19,7 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('/pasco', function(){
-    return view('pasco');
-});
-
+Route::get('/resultat', [Controller::class, 'resultats'])->name('resultats');
 
 
 
@@ -37,7 +33,7 @@ Route::middleware([
     Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
 
     Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
-    
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

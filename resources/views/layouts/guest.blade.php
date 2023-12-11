@@ -12,25 +12,26 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <!-- Scripts -->
+        {{-- @if (env('APP_ENV') == 'local') --}}
 
-    <!-- Styles -->
-    @livewireStyles
-</head>
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-<body>
-    @if (isset($header))
-        <header class="bg-green-500 shadow">
-            <div class="px-4 py-6 mx-auto sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
-    @endif
-    <div class="font-sans text-gray-900 antialiased">
-        {{ $slot }}
-    </div>
-    @livewireScripts
-</body>
+        {{-- @elseif(env('APP_ENV') == 'prod')
 
+            <link rel='stylesheet' type='text/css' href="./build/assets/app.css">
+            <script src="./build/assets/app.js"></script>
+
+        @endif --}}
+
+        <!-- Styles -->
+        @livewireStyles
+    </head>
+    <body>
+        <div class="font-sans text-gray-900 antialiased">
+            {{ $slot }}
+        </div>
+
+        @livewireScripts
+    </body>
 </html>

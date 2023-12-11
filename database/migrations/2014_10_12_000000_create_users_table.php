@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('ville');
             $table->string('pays');
             $table->integer('tel');
+            // Uncomment the line below to add a foreign key constraint
             // $table->foreignId('privileges_id')->default(1)->constrained();
             $table->string('password');
             $table->rememberToken();

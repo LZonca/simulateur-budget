@@ -13,7 +13,7 @@
     <br>
     
     <x-welcome />
-    <footer>
-        <x-footer/>
+    <footer class="absolute w-full bottom-0">
+        <x-footer />
     </footer>
 </x-guest-layout>

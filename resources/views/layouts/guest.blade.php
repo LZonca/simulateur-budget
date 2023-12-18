@@ -34,5 +34,5 @@
 
         @livewireScripts
     </body>
-    
+
 </html>

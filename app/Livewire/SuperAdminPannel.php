@@ -12,10 +12,11 @@ class SuperAdminPannel extends Component
     public function removeAdmin($adminUser_id){
         $adminUser = User::where('id', $adminUser_id)
         ->first();
-        $adminUser->delete();
+        $adminUser->assignRole('user');
+        $adminUser->removeRole('admin');
+        $this->admins;
     }
-
-    public function render()
+public function render()
     {
         return view('livewire.super-admin-pannel');
     }

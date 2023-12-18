@@ -6,10 +6,6 @@
         <button wire:click="addCategory" class="p-10 m-10 border bg-black text-white rounded-lg py-3 font-semibold hover:bg-green-600">Créer Catégorie</button>
     </div>
 
-    <!-- add-categorie.blade.php -->
-
-<!-- add-categorie.blade.php -->
-
 @foreach($categories as $category)
     <div class="max-w-6xl mx-auto mt-10 bg-white shadow-md text-center rounded-lg">
         <div wire:click="toggleCategory({{ $category->id }})" class="max-w-6xl p-6 mx-auto bg-green-300 shadow-xl text-center flex justify-between items-center cursor-pointer transition  rounded-lg ">

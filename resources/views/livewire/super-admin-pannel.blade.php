@@ -12,14 +12,14 @@
         <tbody>
             @foreach ($users as $user)
                 <tr>
-                    <td class="py-2 px-4 border">{{ $admin->name }}</td>
-                    <td class="py-2 px-4 border">{{ $admin->prenom }}</td>
-                    <td class="py-2 px-4 border">{{ $admin->email }}</td>
+                    <td class="py-2 px-4 border">{{ $user->name }}</td>
+                    <td class="py-2 px-4 border">{{ $user->prenom }}</td>
+                    <td class="py-2 px-4 border">{{ $user->email }}</td>
                     <td class="py-2 px-4 border">
-                        <button wire:click='toggleMenu({{ $admin->id }})' class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button wire:click='toggleMenu({{ $user->id }})' class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Action
                         </button>
-                        @if($menu && $selectedUser_id === $admin->id)
+                        @if($menu && $selectedUser_id === $user->id)
                             <div class="bg-gray-200 p-4 mt-2 rounded">
                                 dqd
                             </div>

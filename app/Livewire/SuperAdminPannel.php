@@ -9,7 +9,6 @@ class SuperAdminPannel extends Component
 {
 
     public $users;
-
     public $menu = false;
     public $selectedUser_id;
     public function removeAdmin($user_id){
@@ -28,6 +27,15 @@ class SuperAdminPannel extends Component
         $user = User::where('id', $user_id)
         ->first();
         $user->delete();
+    }
+
+    public function toggleMenu($user_id){
+        if (!$this->menu || $this->selectedUser_id !== $user_id) {
+            $this->menu = true;
+            $this->selectedUser_id = $user_id;
+        } else {
+            $this->menu = false;
+        }
     }
 
     public function render()

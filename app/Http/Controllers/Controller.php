@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Simulation;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller as BaseController;
@@ -31,6 +32,10 @@ class Controller extends BaseController
         // }
     }
 
+    public function superAdminPannel(){
+        $users = User::all();
+        return view('super-admin-pannel', compact('users'));
+    }
     public function pannel(){
         return view('pannel');
     }

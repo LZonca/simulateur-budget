@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Privilege;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
@@ -20,5 +21,11 @@ class Controller extends BaseController
 
     public function pannel(){
         return view('pannel');
+    }
+
+    public function superAdminPannel(){
+        $adminPerm = Privilege::find(2);
+        $adminUsers = $adminPerm->permission;
+        return view('super-admin-pannel', compact('adminUsers'));
     }
 }

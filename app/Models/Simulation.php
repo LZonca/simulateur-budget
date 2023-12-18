@@ -15,5 +15,6 @@ class Simulation extends Model
 
     public function owner(){
         return $this->belongsTo(User::class, 'utilisateur_id');
+
     }
 }

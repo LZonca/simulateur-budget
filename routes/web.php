@@ -34,6 +34,7 @@ Route::middleware([
 
     Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
 
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

@@ -23,6 +23,7 @@ class PermissionSeeder extends Seeder
         $seeUsers = Permission::create(['name' => 'see users']);
         $addCategories = Permission::create(['name' => 'create category']);
         $editUsers = Permission::firstOrCreate(['name' => 'edit users']);
+        $addAdmin = Permission::create(['name' => 'create admin']);
 
         // Assign permissions to roles
         $adminPermissions = [
@@ -32,6 +33,7 @@ class PermissionSeeder extends Seeder
         $administrateur->givePermissionTo($adminPermissions);
         $superAdministrateur->givePermissionTo($adminPermissions);
         $superAdministrateur->givePermissionTo($editUsers);
+        $superAdministrateur->givePermissionTo($addAdmin);
 
         /*
             ADMIN

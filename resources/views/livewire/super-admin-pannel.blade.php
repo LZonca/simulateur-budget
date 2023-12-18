@@ -7,12 +7,12 @@
             <th>Action</th>
         </thead>
         <tbody>
-            @foreach ($adminUsers as $adminUser)
+            @foreach ($admins as $admin)
                 <tr>
-                    <td>{{ $adminUser->name }}</td>
-                    <td>{{ $adminUser->prenom }}</td>
-                    <td>{{ $adminUser->email }}</td>
-                    <td> <button wire:click='removeAdmin({{ $adminUser->id }})'>Remove admin</td>
+                    <td>{{ $admin->name }}</td>
+                    <td>{{ $admin->prenom }}</td>
+                    <td>{{ $admin->email }}</td>
+                    <td> <button wire:click='removeAdmin({{ $admin->id }})'>Remove admin</td>
                 </tr>
             @endforeach
         </tbody>

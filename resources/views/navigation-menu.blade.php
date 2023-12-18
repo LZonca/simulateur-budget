@@ -28,6 +28,11 @@
                             {{ __('Admin pannel') }}
                         </x-nav-link>
                     @endcan
+                    @can('create admin')
+                    <x-nav-link href="{{ route('super-admin-pannel') }}" :active="request()->routeIs('super-admin-pannel')">
+                        {{ __('Super admin pannel') }}
+                    </x-nav-link>
+                    @endcan
 
                 </div>
             </div>

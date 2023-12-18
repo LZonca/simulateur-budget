@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Privilege;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use Spatie\Permission\Models\Role;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Controller extends BaseController
 {
@@ -24,8 +25,8 @@ class Controller extends BaseController
     }
 
     public function superAdminPannel(){
-        $adminPerm = Privilege::find(2);
-        $adminUsers = $adminPerm->permission;
-        return view('super-admin-pannel', compact('adminUsers'));
+        $adminRole = Role::where('name', 'admin')->first();
+        $admins = $adminRole->users;
+        return view('super-admin-pannel', compact('admins'));
     }
 }

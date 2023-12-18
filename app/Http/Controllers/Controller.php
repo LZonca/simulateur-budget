@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Privilege;
-use Spatie\Permission\Models\Role;
+use App\Models\Simulation;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -16,17 +16,22 @@ class Controller extends BaseController
         return view('simulateur');
     }
 
-    public function resultats(){
-        return view('resultats');
+    public function resultats()
+    {
+        // Vérifier si l'utilisateur est authentifié
+        if (Auth::check()) {
+            // Utilisateur authentifié, récupérer les résultats
+            $simulations = Auth::user()->simulations;
+            return view('resultats', compact('simulations'));
+
+        }
+        // else {
+        //     // Utilisateur non authentifié, rediriger vers la page de connexion
+        //     return redirect()->route('login')->with('status', 'Veuillez vous connecter pour accéder aux résultats.');
+        // }
     }
 
     public function pannel(){
         return view('pannel');
-    }
-
-    public function superAdminPannel(){
-        $adminRole = Role::where('name', 'admin')->first();
-        $admins = $adminRole->users;
-        return view('super-admin-pannel', compact('admins'));
     }
 }

@@ -10,7 +10,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($admins as $admin)
+            @foreach ($users as $user)
                 <tr>
                     <td class="py-2 px-4 border">{{ $admin->name }}</td>
                     <td class="py-2 px-4 border">{{ $admin->prenom }}</td>

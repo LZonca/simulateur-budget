@@ -41,6 +41,7 @@ Route::middleware([
 
         Route::get('/super-admin-pannel', [Controller::class, 'superAdminPannel'])->name('super-admin-pannel');
 
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

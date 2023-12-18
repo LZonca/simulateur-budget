@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-// use App\Models\Privilege;
+use App\Models\Privilege;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            PermissionSeeder::class,
-            // SimulationSeeder::class,
+            PrivilegeSeeder::class,
+            SimulationSeeder::class,
             UserSeeder::class,
         ]);
     }

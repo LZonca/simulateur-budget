@@ -8,11 +8,9 @@ use Livewire\Component;
 class SuperAdminPannel extends Component
 {
 
-    public $admins;
+    public $users;
     public function removeAdmin($adminUser_id){
-        $adminUser = User::where('id', $adminUser_id)
-        ->first();
-        $adminUser->delete();
+        
     }
 
     public function render()

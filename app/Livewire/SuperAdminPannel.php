@@ -9,7 +9,9 @@ class SuperAdminPannel extends Component
 {
 
     public $users;
-    
+
+    public $menu = false;
+    public $selectedUser_id;
     public function removeAdmin($user_id){
         $user = User::where('id', $user_id)
         ->first();
@@ -29,7 +31,7 @@ class SuperAdminPannel extends Component
     }
 
     public function render()
-        {
-            return view('livewire.super-admin-pannel');
-        }
+    {
+        return view('livewire.super-admin-pannel');
+    }
 }

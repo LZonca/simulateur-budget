@@ -19,7 +19,6 @@ class User extends Authenticatable
     use HasProfilePhoto;
     use Notifiable;
     use TwoFactorAuthenticatable;
-    use HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -70,6 +69,6 @@ class User extends Authenticatable
     ];
 
     public function simulations(){
-        return $this->hasMany(Simulation::class);
+        return $this->hasMany(Simulation::class, 'utilisateur_id');
     }
 }

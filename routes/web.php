@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
@@ -21,18 +22,24 @@ Route::get('/', function () {
 
 Route::get('/resultat', [Controller::class, 'resultats'])->name('resultats');
 
+Route::get('/test', function(){
+    $user = User::find(4);
+    dd($user->permission);
+});
 
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
-    Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
+    ])->group(function () {
+        Route::get('/simulateur', [Controller::class, 'simulateur'])->name('simulateur');
 
-    Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
+        Route::get('/resultats', [Controller::class, 'resultats'])->name('resultats');
 
-    Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
+        Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
+
+        Route::get('/super-admin-pannel', [Controller::class, 'superAdminPannel'])->name('super-admin-pannel');
 
 
     Route::get('/dashboard', function () {

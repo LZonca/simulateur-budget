@@ -6,13 +6,14 @@ use App\Models\Categorie;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-// Livewire Component
 class AddCategorie extends Component
 {
     use WithFileUploads;
+
     public $categorie_nom;
     public $categorie_img;
     public $nouvelles_sous_categories = [];
+    public $openCategories = [];
 
     public function render()
     {
@@ -24,22 +25,22 @@ class AddCategorie extends Component
     {
         $this->validate([
             'categorie_img' => 'image|max:1024',
-            "categorie_nom" => 'string|required',
-            
+            'categorie_nom' => 'string|required',
         ]);
-        if($this->categorie_img)
-             $path = $this->categorie_img->store('categorie_img', 'public');
-        else{
-            $path = Null;
-           
+
+        if ($this->categorie_img) {
+            $path = $this->categorie_img->store('categorie_img', 'public');
+        } else {
+            $path = null;
         }
 
-        Categorie::create([
+        $newCategory = Categorie::create([
             'categorie_nom' => $this->categorie_nom,
             'categorie_img' => $path,
         ]);
-        
-   
+
+        // Add the new category to the open categories array
+        $this->openCategories[] = $newCategory->id;
 
         $this->reset(['categorie_nom', 'categorie_img']);
     }
@@ -55,5 +56,14 @@ class AddCategorie extends Component
         ]);
 
         $this->reset("nouvelles_sous_categories.$categoryId");
+    }
+
+    public function toggleCategory($categoryId)
+    {
+        if (in_array($categoryId, $this->openCategories)) {
+            $this->openCategories = array_diff($this->openCategories, [$categoryId]);
+        } else {
+            $this->openCategories[] = $categoryId;
+        }
     }
 }

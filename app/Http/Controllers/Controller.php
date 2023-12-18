@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Privilege;
 use Spatie\Permission\Models\Role;
 use Illuminate\Routing\Controller as BaseController;
@@ -26,7 +27,7 @@ class Controller extends BaseController
 
     public function superAdminPannel(){
         $adminRole = Role::where('name', 'admin')->first();
-        $admins = $adminRole->users;
-        return view('super-admin-pannel', compact('admins'));
+        $users = User::all();
+        return view('super-admin-pannel', compact('users'));
     }
 }

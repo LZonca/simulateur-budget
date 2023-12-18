@@ -2,18 +2,24 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class UserSeeder extends Seeder
 {
+
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
+        $userRole = Role::where('name', 'user')->first();
+        $adminRole = Role::where('name', 'admin')->first();
+        $superAdminRole = Role::where('name', 'super-admin')->first();
+
         $u = new User();
         $u->name = "User1";
         $u->prenom = "User1";
@@ -23,7 +29,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville1";
         $u->pays = "pays1";
         $u->tel = "0000000001";
-        // $u->privileges_id = 1;
+        $u->assignRole($adminRole);
         $u->password = hash::make("user1");
         $u->save();
 
@@ -49,7 +55,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville3";
         $u->pays = "pays3";
         $u->tel = "0000000003";
-        // $u->privileges_id = 2;
+        $u->assignRole($adminRole);
         $u->password = hash::make("admin1");
         $u->save();
 
@@ -62,8 +68,8 @@ class UserSeeder extends Seeder
         $u->ville = "ville4";
         $u->pays = "pays4";
         $u->tel = "0000000004";
-        // $u->privileges_id = 3;
-        $u->password = hash::make("admin1");
+        $u->assignRole($superAdminRole);
+        $u->password = hash::make("superadmin1");
         $u->save();
     }
 }

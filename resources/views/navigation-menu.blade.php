@@ -23,11 +23,11 @@
                             {{ __('Vos résultats') }}
                         </x-nav-link>
                     @endif
-                    @if (auth()->user()->privileges_id == 2)
+                    @can('create category')
                         <x-nav-link href="{{ route('pannel') }}" :active="request()->routeIs('pannel')">
                             {{ __('Admin pannel') }}
                         </x-nav-link>
-                    @endif
+                    @endcan
 
                 </div>
             </div>

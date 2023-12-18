@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class PermissionSeeder extends Seeder
 {
@@ -12,12 +14,11 @@ class PermissionSeeder extends Seeder
      */
     public function run(): void
     {
-
         $user = Role::firstOrCreate(['name' => 'User']);
         $administrateur = Role::firstOrCreate(['name' => 'admin']);
         $superAdministrateur = Role::firstOrCreate(['name' => 'super-admin']);
 
-        // Create 
+        // Create
         $deleteUsers = Permission::create(['name' => 'delete users']);
         $seeUsers = Permission::create(['name' => 'see users']);
         $addCategories = Permission::create(['name' => 'create category']);
@@ -25,26 +26,16 @@ class PermissionSeeder extends Seeder
 
         // Assign permissions to roles
         $adminPermissions = [
-            $addCategories, $seeUsers, $editUsers, $deleteUsers
+            $addCategories, $seeUsers,  $deleteUsers
         ];
+
         $administrateur->givePermissionTo($adminPermissions);
         $superAdministrateur->givePermissionTo($adminPermissions);
+        $superAdministrateur->givePermissionTo($editUsers);
 
         /*
             ADMIN
         */
 
-
-        $deleteUsers->assignRole($admin);
-        $deleteUsers->assignRole($superadmin);
-
-        $seeUsers->assignRole($admin);
-        $seeUsers->assignRole($superadmin);
-
-        $seeUsers->assignRole($admin);
-        $seeUsers->assignRole($superadmin);
-
-        $addCategories->assignRole($admin);
-        $addCategories->assignRole($superadmin);
     }
 }

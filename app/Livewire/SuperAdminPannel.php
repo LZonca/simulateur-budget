@@ -23,4 +23,5 @@ class SuperAdminPannel extends Component
     {
         return view('livewire.super-admin-pannel');
     }
+    
 }

@@ -9,15 +9,27 @@ class SuperAdminPannel extends Component
 {
 
     public $users;
-    public function removeAdmin($adminUser_id){
-        $adminUser = User::where('id', $adminUser_id)
+    
+    public function removeAdmin($user_id){
+        $user = User::where('id', $user_id)
         ->first();
-        $adminUser->assignRole('user');
-        $adminUser->removeRole('admin');
-        $this->admins;
+        $user->removeRole('admin');
     }
-public function render()
-    {
-        return view('livewire.super-admin-pannel');
+
+    public function setAdmin($user_id){
+        $user = User::where('id', $user_id)
+        ->first();
+        $user->assignRole('admin');
     }
+
+    public function deleteUser($user_id){
+        $user = User::where('id', $user_id)
+        ->first();
+        $user->delete();
+    }
+
+    public function render()
+        {
+            return view('livewire.super-admin-pannel');
+        }
 }

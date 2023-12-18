@@ -1,12 +1,7 @@
-
-
-
-<x-slot name="header">
-    <div class="flex items-center">
-        <img src="{{ asset('/img/arnas_img.png') }}" alt="Logo" class="mr-25 w-70 h-20">
-        <h1 class="text-2xl font-semibold ml-10">Bienvenue à la Mairie d'Arnas</h1>
-    </div>
-</x-slot>
+<!--<div class="flex items-center bg-green-500">
+    <img src="{{ asset('/img/arnas_img.png') }}" alt="Logo" class="mr-25 w-70 h-20">
+    <h1 class="text-2xl font-semibold ml-10">Bienvenue à la Mairie d'Arnas</h1>
+</div>-->
 
 <main class="mx-10 bg-white ">
     <section>

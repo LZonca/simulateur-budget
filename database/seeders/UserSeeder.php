@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
         $u->ville = "ville1";
         $u->pays = "pays1";
         $u->tel = "0000000001";
-        $u->assignRole($adminRole);
+        // $u->assignRole($adminRole);
         $u->password = hash::make("user1");
         $u->save();
 

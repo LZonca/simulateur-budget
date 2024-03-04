@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.2",
+        "robsontenorio/mary": "^1.21",
         "spatie/laravel-permission": "^6.2"
     },
     "require-dev": {

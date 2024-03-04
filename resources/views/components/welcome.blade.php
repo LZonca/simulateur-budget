@@ -19,6 +19,7 @@
             <li>Événements locaux</li>
         </ul>
     </section>-->
+
     <section class="mt-8">
         <h2 class="mb-4 text-2xl font-semibold">But de ce simulateur</h2>
         <p class="text-gray-700">Ce simulateur a pour but de permettre aux habitants de notre ville

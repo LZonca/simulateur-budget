@@ -28,7 +28,7 @@
         </p>
     </section>
 
-    <section class="mt-8">
+    <section class="my-8">
         <h2 class="mb-4 text-2xl font-semibold">Engagement Communautaire</h2>
         <p class="mb-10 text-gray-700">Nous croyons en la participation active des citoyens dans la prise de décision.
             Le

@@ -26,7 +26,7 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="font-sans antialiased">
+    <body class="flex flex-col w-full min-h-screen p-0 antialiased">
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
@@ -39,7 +39,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="min-h-screen">
                 {{ $slot }}
             </main>
         </div>
@@ -49,7 +49,5 @@
         @livewireScripts
         {{-- <p>Hello world!</p> --}}
     </body>
-    <footer class="absolute w-full bottom-0">
         <x-footer/>
-    </footer>
 </html>

@@ -13,8 +13,12 @@ class Simulation extends Model
     //     return $this->belongsTo(SousCategorie::class);
     // }
 
-    public function owner(){
-        return $this->belongsTo(User::class, 'utilisateur_id');
+    public int $level = 10;
 
+    public function rules(): array
+    {
+        return [
+            'level' => ['required', 'gt:10'],
+        ];
     }
 }

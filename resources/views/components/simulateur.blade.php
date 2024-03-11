@@ -1,3 +1,5 @@
+
+<x-mary-range wire:model.live.debounce="level" label="Select a level" hint="Greater than 10." />
 <div style="width: 400px; height: 400px;">
     <canvas id="camembertChart"></canvas>
 </div>

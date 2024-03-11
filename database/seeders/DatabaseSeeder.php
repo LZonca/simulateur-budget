@@ -25,6 +25,8 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             UserSeeder::class,
             SimulationSeeder::class,
+            CategorieSeeder::class,
+            SousCategorieSeeder::class,
         ]);
     }
 }

@@ -16,7 +16,7 @@ return [
      *    php artisan view:clear
      *
      */
-    'prefix' => '',
+    'prefix' => 'mary-',
 
     /**
      * Components settings

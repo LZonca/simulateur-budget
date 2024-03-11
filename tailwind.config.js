@@ -2,6 +2,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: 'class',
@@ -32,6 +33,10 @@ export default {
 		require("daisyui")
 	],
 
+    module:exports = {
+        //...
+        plugins: [require("daisyui")]
+    }
 
 };
 

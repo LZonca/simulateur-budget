@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
 {
     Schema::create('simulations', function (Blueprint $table) {
-        $table->id('simulations_id');
+        $table->id('id');
         $table->string('simulations_nom');
         $table->date('simulations_date');
         $table->string('simulations_resultats');

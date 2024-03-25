@@ -34,56 +34,6 @@ class SousCategorieSeeder extends Seeder
         $s->save();
 
         $s = new SousCategorie();
-        $s->sous_categorie_nom = "charges de personnel";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Conventions ou prestations de services ponctuelles";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "fluides, produits, maintenance, etc";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "téléphonie et affranchissement";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "assurance";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "indemnités élus";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "CCAS";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "FPIC";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Pénalités loi SRU";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "taxes";
-        $s->categorie_id = 2;
-        $s->save();
-
-        $s = new SousCategorie();
         $s->sous_categorie_nom = "Communication";
         $s->categorie_id = 2;
         $s->save();
@@ -105,31 +55,6 @@ class SousCategorieSeeder extends Seeder
 
         $s = new SousCategorie();
         $s->sous_categorie_nom = "Police municipale";
-        $s->categorie_id = 3;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "charges de personnel";
-        $s->categorie_id = 3;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Vêtements et matériels professionnels";
-        $s->categorie_id = 3;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Logiciels";
-        $s->categorie_id = 3;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Véhicule";
-        $s->categorie_id = 3;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Activité du service (mises en fourrière/stérilisation chats errants/adhésion Ville Prudente)";
         $s->categorie_id = 3;
         $s->save();
 
@@ -195,16 +120,6 @@ class SousCategorieSeeder extends Seeder
 
         $s = new SousCategorie();
         $s->sous_categorie_nom = "Médiathèque";
-        $s->categorie_id = 5;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Charges de personnel";
-        $s->categorie_id = 5;
-        $s->save();
-
-        $s = new SousCategorie();
-        $s->sous_categorie_nom = "Fluides et bâtiment";
         $s->categorie_id = 5;
         $s->save();
 

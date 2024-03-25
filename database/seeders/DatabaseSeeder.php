@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             SimulationSeeder::class,
             CategorieSeeder::class,
             SousCategorieSeeder::class,
+            SousSousCategorieSeeder::class,
         ]);
     }
 }

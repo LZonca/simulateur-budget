@@ -27,9 +27,9 @@ class Simulateur extends Component
 
     public function mount()
     {
-        $this -> categories = Categorie::all();
-        $this -> sousCategories = sousCategorie::all();
-        $this -> sousSousCategories = sousSousCategorie::all();
+        $this-> categories = Categorie::all();
+/*        $this->sousCategories = SousCategorie::all();
+        $this-> sousSousCategories = SousSousCategorie::all();*/
     }
 
     // Méthodes pour ajuster les valeurs avec +/- 10%

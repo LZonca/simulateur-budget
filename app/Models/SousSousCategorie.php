@@ -9,7 +9,7 @@ class SousSousCategorie extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['sous_sous_categorie_nom', 'categorie_id'];
+    protected $fillable = ['sous_sous_categorie_nom', 'categorie_id', 'montant'];
 
 
     public function owner()

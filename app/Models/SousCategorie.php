@@ -9,7 +9,7 @@ class SousCategorie extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['sous_categorie_nom', 'categorie_id'];
+    protected $fillable = ['sous_categorie_nom', 'categorie_id', 'montant'];
 
 
     public function owner()
@@ -19,7 +19,7 @@ class SousCategorie extends Model
 
     public function sousSousCategories()
     {
-        return $this->hasMany(SousSousCategorie::class, 'sous_categorie_id');
+        return $this->hasMany(SousSousCategorie::class);
     }
     // Reste du modèle...
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('categorie_nom');
             $table->integer('montant');
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

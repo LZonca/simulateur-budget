@@ -1,122 +1,115 @@
-<div style="width: 400px; height: 400px;">
-    <canvas id="camembertChart"></canvas>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur</title>
+    <!-- Inclure les bibliothèques JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Balise Livewire -->
+    <x-mary-range wire:model="level" label="Select a level" hint="Greater than 10." />
+
+    <!-- Canvas pour le graphique -->
+    <div style="width: 400px; height: 400px;">
+        <canvas id="camembertChart"></canvas>
+    </div>
+
+<!-- Valeurs indépendantes avec boutons +/- 10% -->
+<div>
+    <label for="level">Level:</label>
+    <input type="number" id="level" wire:model="level" class="value-input">
+    <button wire:click="adjustLevel(10)">+10%</button>
+    <button wire:click="adjustLevel(-10)">-10%</button>
 </div>
 
 <div>
-    <label for="inputRangeA">Catégorie A :</label>
-    <input type="range" id="inputRangeA" min="0" max="100" step="1" value="30" data-index="0">
-    <span id="rangeValueA">30%</span>
+    <label for="level1">Catégorie B :</label>
+    <input type="number" id="level1" wire:model="level1" class="value-input">
+    <button wire:click="adjustLevel1(10)">+10%</button>
+    <button wire:click="adjustLevel1(-10)">-10%</button>
 </div>
 
 <div>
-    <label for="inputRangeB">Catégorie B :</label>
-    <input type="range" id="inputRangeB" min="0" max="100" step="1" value="40" data-index="1">
-    <span id="rangeValueB">40%</span>
+    <label for="level2">Catégorie C :</label>
+    <input type="number" id="level2" wire:model="level2" class="value-input">
+    <button wire:click="adjustLevel2(10)">+10%</button>
+    <button wire:click="adjustLevel2(-10)">-10%</button>
 </div>
 
 <div>
-    <label for="inputRangeC">Catégorie C :</label>
-    <input type="range" id="inputRangeC" min="0" max="100" step="1" value="15" data-index="2">
-    <span id="rangeValueC">15%</span>
+    <label for="level3">Catégorie D :</label>
+    <input type="number" id="level3" wire:model.live="level3" class="value-input" disabled>
+    <!-- Le bouton +/- 10% pour la catégorie D est désactivé c elle est désactivée -->
 </div>
 
-<div>
-    <label for="inputRangeD">Catégorie D :</label>
-    <input type="range" id="inputRangeD" min="0" max="100" step="1" value="15" data-index="3">
-    <span id="rangeValueD">15%</span>
-</div>
 
-<button onclick="enregistrer()">Enregistrer</button>
 
-<script>
-    var valeurs = [30, 40, 15, 15];
-    var total = valeurs.reduce(function(a, b) {
-        return a + b;
-    }, 0);
 
+
+    <!-- Affichage des valeurs en temps réel -->
+    <div id="barValues">
+        <!-- Les valeurs des barres seront affichées ici en temps réel -->
+    </div>
+
+    <!-- Bouton d'enregistrement -->
+    <button onclick="enregistrer()">Enregistrer</button>
+
+    <!-- Script JavaScript -->
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Récupérer les valeurs initiales à partir de Livewire
+    var levelInitial = {{ $level }};
+    var level1Initial = {{ $level1 }};
+    var level2Initial = {{ $level2 }};
+    var level3Initial = {{ $level3 }};
+
+    // Mettre à jour le graphique et les valeurs
     function mettreAJourGraphique() {
-        var ajustement = 100 / total;
-        valeurs = valeurs.map(function(val) {
-            return Math.round(val * ajustement);
-        });
-        total = valeurs.reduce(function(a, b) {
-            return a + b;
-        }, 0);
-
-        ['A', 'B', 'C', 'D'].forEach(function(categorie) {
-            var index = document.getElementById('inputRange' + categorie).getAttribute('data-index');
-            var pourcentage = Math.round((valeurs[index] / total * 100));
-            document.getElementById('rangeValue' + categorie).innerText = pourcentage + '%';
-
-            // Mettre à jour la position du curseur
-            document.getElementById('inputRange' + categorie).value = pourcentage;
-        });
-
-        var pourcentages = valeurs.map(function(val) {
-            return (val / total * 100).toFixed(2);
-        });
-        var labels = pourcentages.map(function(percentage, index) {
-            return 'Catégorie ' + String.fromCharCode(65 + index) + ' (' + percentage + '%)';
-        });
-
-        camembertChart.data.labels = labels;
-        camembertChart.data.datasets[0].data = valeurs;
-        camembertChart.update();
+        // Mettre à jour le graphique ici (si nécessaire)
     }
 
-    ['A', 'B', 'C', 'D'].forEach(function(categorie) {
+    // Gérer le déplacement des curseurs de barre
+    ['B', 'C', 'D'].forEach(function (categorie) {
         var inputRange = document.getElementById('inputRange' + categorie);
         var rangeValue = document.getElementById('rangeValue' + categorie);
 
-        inputRange.addEventListener('input', function() {
-            var inputValue = this.value;
-            var index = this.getAttribute('data-index');
-            rangeValue.innerText = inputValue + '%';
-            valeurs[index] = parseInt(inputValue);
+        // Initialiser la valeur de la barre à partir de Livewire
+        var initialValue;
+        switch (categorie) {
+            case 'B':
+                initialValue = level1Initial;
+                break;
+            case 'C':
+                initialValue = level2Initial;
+                break;
+            case 'D':
+                initialValue = level3Initial;
+                break;
+            default:
+                initialValue = 50; // Valeur par défaut
+        }
+
+        // Définir la valeur initiale
+        inputRange.value = initialValue;
+        rangeValue.innerText = initialValue + '€';
+
+        // Gérer les événements de modification
+        inputRange.addEventListener('input', function () {
+            var inputValue = parseInt(this.value);
+            rangeValue.innerText = inputValue + '€';
             mettreAJourGraphique();
         });
     });
+});
 
-    var ctx = document.getElementById('camembertChart').getContext('2d');
-    var camembertChart = new Chart(ctx, {
-        type: 'pie',
-        data: {
-            labels: [],
-            datasets: [{
-                data: [],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.5)',
-                    'rgba(54, 162, 235, 0.5)',
-                    'rgba(255, 206, 86, 0.5)',
-                    'rgba(75, 192, 192, 0.5)',
-                ],
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: 'Répartition des catégories',
-            }
-        }
-    });
 
-    // Charger initialement les données
-    mettreAJourGraphique();
 
-    function enregistrer() {
-        // Envoyer les données au serveur avec AJAX
-        $.ajax({
-            type: 'POST',
-            url: 'enregistrer.php',
-            data: {
-                valeurs: valeurs
-            },
-            success: function(response) {
-                console.log(response);
-            },
-            error: function(error) {
-                console.error(error);
-            }
-        });
-    }
-</script>
+    </script>
+</body>
+
+</html>

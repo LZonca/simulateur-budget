@@ -17,6 +17,10 @@ class SousCategorie extends Model
         return $this->belongsTo(Categorie::class, 'categorie_id');
     }
 
+    public function sousSousCategories()
+    {
+        return $this->hasMany(SousSousCategorie::class, 'sous_categorie_id');
+    }
     // Reste du modèle...
 }
 

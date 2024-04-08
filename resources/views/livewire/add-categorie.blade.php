@@ -3,6 +3,7 @@
     <div class="max-w-6xl my-14 p-6 mx-auto items-stretch justify-center bg-white shadow-md text-center rounded-lg flex flex-col gap-2 ">
         <x-mary-input type="text" wire:model="categorie_nom" placeholder="Nouvelle catégorie" class="glass"/>
         <x-mary-input type="text" wire:model="categorie_budget" placeholder="Montant initial du budget" class="glass w-fit" />
+        <x-mary-input type="color" wire:model="categorie_color" placeholder="Couleur de la acatégorie" class="glass" />
         <x-mary-button wire:click="addCategory" label="Créer Catégorie" class="p-10 m-10 border bg-black text-white rounded-lg py-3 font-semibold hover:bg-green-600" />
     </div>
 @foreach($categories as $category)

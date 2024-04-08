@@ -12,6 +12,7 @@ class AddCategorie extends Component
 
     public $categorie_nom;
     public $categorie_img;
+    public $categorie_color;
     public $categorie_budget;
     public $nouvelles_sous_categories = [];
     public $nouvelles_sous_sous_categories = [];
@@ -32,10 +33,13 @@ class AddCategorie extends Component
             'categorie_budget' => 'int|required|min:0'
         ]);
 
-        $newCategory = Categorie::create([
-            'categorie_nom' => $this->categorie_nom,
-            'montant' => $this->categorie_budget,
-        ]);
+        $newCategory = new Categorie;
+        $newCategory->categorie_nom = $this->categorie_nom;
+        $newCategory->montant = $this->categorie_budget;
+        $newCategory->color = $this->categorie_color;
+        $newCategory->save();
+
+   
 
         // Add the new category to the open categories array
         $this->openCategories[] = $newCategory->id;

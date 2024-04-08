@@ -20,15 +20,24 @@ class Simulateur extends Component
     public function adjustLevel($amount)
     {
         $this->level += $this->level * $amount / 100;
+        $this->updateTotal();
     }
 
     public function adjustLevel1($amount)
     {
         $this->level1 += $this->level1 * $amount / 100;
+        $this->updateTotal();
     }
 
     public function adjustLevel2($amount)
     {
         $this->level2 += $this->level2 * $amount / 100;
+        $this->updateTotal();
+    }
+
+    // Méthode pour mettre à jour la somme totale
+    private function updateTotal()
+    {
+        $this->level3 = $this->level + $this->level1 + $this->level2;
     }
 }

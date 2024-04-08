@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('id');
             $table->foreignId('sous_categorie_id')->constrained();
             $table->string('sous_sous_categorie_nom');
+            $table->integer('montant');
             $table->timestamps();
         });
     }

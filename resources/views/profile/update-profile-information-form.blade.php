@@ -1,3 +1,4 @@
+<div class="mt-5 md:mt-5 md:col-span-2">
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
         {{ __('Profile Information') }}

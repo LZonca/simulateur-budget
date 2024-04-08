@@ -14,5 +14,5 @@
 
     <x-welcome />
 
-    <x-footer />
+    <x-footer2 />
 </x-guest-layout>

@@ -30,7 +30,7 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
-            <div class="fixed w-full top:0">
+            <div class="fixed w-full z-50 top:0">
             @livewire('navigation-menu')
             </div>
             <!-- Page Heading -->

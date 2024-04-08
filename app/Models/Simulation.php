@@ -9,6 +9,13 @@ class Simulation extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'simulations_id',
+        'simulations_nom',
+        'simulations_date',
+        'simulations_resultats',
+        'utilisateur_id',
+    ];
     // public function simulations(){
     //     return $this->belongsTo(SousCategorie::class);
     // }

@@ -23,6 +23,11 @@
                                 <td class="border border-gray-300 px-4 py-2">{{ $simulation->simulations_nom }}</td>
                                 <td class="border border-gray-300 px-4 py-2">{{ $simulation->simulations_date }}</td>
                                 <td class="border border-gray-300 px-4 py-2">{{ $simulation->simulations_resultats }}</td>
+                                <td class="border border-gray-300 px-4 py-2">
+                                    <a target='_blank' href="{{ $simulation->simulation_id }}/generate">
+                                        <x-mary-button label="Télécharger" icon-right="o-arrow-down-tray" spinner />
+                                    </a>
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>

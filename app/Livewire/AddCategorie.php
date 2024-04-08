@@ -12,37 +12,35 @@ class AddCategorie extends Component
 
     public $categorie_nom;
     public $categorie_img;
+    public $categorie_budget;
     public $nouvelles_sous_categories = [];
+    public $nouvelles_sous_sous_categories = [];
     public $openCategories = [];
+    public $openSubCategories = [];
 
     public function render()
     {
         $categories = Categorie::with('sousCategories')->get();
-        return view('livewire.add-categorie', compact('categories'));
+        $subCategories = Categorie::with('sousCategories.sousSousCategories')->get();
+        return view('livewire.add-categorie', compact('categories', 'subCategories'));
     }
 
     public function addCategory()
     {
         $this->validate([
-            'categorie_img' => 'image|max:1024',
             'categorie_nom' => 'string|required',
+            'categorie_budget' => 'int|required|min:0'
         ]);
-
-        if ($this->categorie_img) {
-            $path = $this->categorie_img->store('categorie_img', 'public');
-        } else {
-            $path = null;
-        }
 
         $newCategory = Categorie::create([
             'categorie_nom' => $this->categorie_nom,
-            'categorie_img' => $path,
+            'montant' => $this->categorie_budget,
         ]);
 
         // Add the new category to the open categories array
         $this->openCategories[] = $newCategory->id;
 
-        $this->reset(['categorie_nom', 'categorie_img']);
+        $this->reset(['categorie_nom', 'categorie_budget']);
     }
 
     public function addNewSubCategory($categoryId)
@@ -58,12 +56,34 @@ class AddCategorie extends Component
         $this->reset("nouvelles_sous_categories.$categoryId");
     }
 
+    public function addNewSubSubCategory($subCategoryId)
+    {
+        $this->validate([
+            'nouvelles_sous_sous_categories.' . $subCategoryId => 'required|string',
+        ]);
+
+        Categorie::find($subCategoryId)->sousCategories()->create([
+            'sous_sous_categorie_nom' => $this->nouvelles_sous_sous_categories[$subCategoryId],
+        ]);
+
+        $this->reset("nouvelles_sous_sous_categories.$subCategoryId");
+    }
+
     public function toggleCategory($categoryId)
     {
         if (in_array($categoryId, $this->openCategories)) {
             $this->openCategories = array_diff($this->openCategories, [$categoryId]);
         } else {
             $this->openCategories[] = $categoryId;
+        }
+    }
+
+    public function toggleSubCategory($subCategoryId)
+    {
+        if (in_array($subCategoryId, $this->openCategories)) {
+            $this->openSubCategories = array_diff($this->openSubCategories, [$subCategoryId]);
+        } else {
+            $this->openSubCategories[] = $subCategoryId;
         }
     }
 }

@@ -10,7 +10,7 @@
     <div class="max-w-6xl mx-auto mt-10 bg-white shadow-md text-center rounded-lg">
         <div wire:click="toggleCategory({{ $category->id }})" class="max-w-6xl p-6 mx-auto  shadow-xl text-center flex justify-between items-center cursor-pointer transition  rounded-lg " style="background-color: {{ $category->color }}">
             <div class="flex flex-row gap-4 align-end">
-                <span>{{ $category->categorie_nom }}</span>
+                <span class="bg-base-100 outline-1 rounded p-6">{{ $category->categorie_nom }}</span>
                 <x-mary-button  label="Edit Category" link="{{route('categories.edit', $category->id)}}" class="border bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-700" />
                 <x-mary-button wire:click.stop="deleteCategory({{ $category->id }})" icon="o-trash" class="border bg-black text-white rounded-lg py-3 font-semibold hover:bg-red-700" />
             </div>
@@ -32,7 +32,7 @@
                     <div class="l m-10 bg-white shadow-md text-center rounded-lg">
                         <div wire:click="toggleSubCategory({{ $subCategory->id }})" class="max-w-6xl p-6 m-6  bg-green-300 shadow-xl text-center flex justify-between items-center cursor-pointer transition  rounded-lg ">
                             <div class="flex flex-row gap-4 align-middle">
-                                <span>{{ $subCategory->sous_categorie_nom }}</span>
+                                <span class="bg-base-100 outline-1 rounded p-6">{{ $subCategory->sous_categorie_nom }}</span>
                                 {{--<x-mary-button wire:click="editSubCategory({{ $subCategory->id }})" label="Edit Subcategory" class="border bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-700" />--}}
                                 <x-mary-button wire:click.stop="deleteSubCategory({{ $category->id }})" icon="o-trash" class="border bg-black text-white rounded-lg py-3 font-semibold hover:bg-red-700" />
                             </div>
@@ -52,7 +52,7 @@
                                     <div class="max-w-6xl p-6 m-16  bg-green-300 shadow-xl text-center flex justify-between items-center cursor-pointer transition  rounded-lg ">
                                         <div class="flex flex-row gap-4 align-middle">
 
-                                            <span>{{ $subSubCategory->sous_sous_categorie_nom }}</span>
+                                            <span class="bg-base-300 outline-1 rounded p-6">{{ $subSubCategory->sous_sous_categorie_nom }}</span>
                                             {{--<x-mary-button wire:click="editSubSubCategory({{ $subSubCategory->id }})" label="Edit Subsubcategory" class="border bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-700" />--}}
                                             <x-mary-button wire:click="deleteSubSubCategory({{ $subSubCategory->id }})" icon="o-trash" class="border bg-black text-white rounded-lg py-3 font-semibold hover:bg-red-700" />
                                         </div>

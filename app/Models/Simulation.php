@@ -9,19 +9,20 @@ class Simulation extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'simulations_id',
-        'simulations_nom',
-        'simulations_date',
-        'simulations_resultats',
-        'utilisateur_id',
-    ];
-    // public function simulations(){
-    //     return $this->belongsTo(SousCategorie::class);
-    // }
+    protected $fillable = ['simulation_nom', 'simulations_date', 'utilisateur_id', 'available_budget'];
 
-    public function owner(){
+    public function user()
+    {
         return $this->belongsTo(User::class, 'utilisateur_id');
+    }
 
+    public function resultatsCategories()
+    {
+        return $this->hasMany(ResultatsCategories::class);
+    }
+
+    public function resultatsSousCategories()
+    {
+        return $this->hasManyThrough(ResultatsSousCategories::class, ResultatsCategories::class);
     }
 }

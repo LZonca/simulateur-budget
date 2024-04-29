@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PDFController;
+use App\Models\Simulation;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +44,11 @@ Route::middleware([
 
     Route::get('/super-admin-pannel', [Controller::class, 'superAdminPannel'])->name('super-admin-pannel');
 
+    Route::get('/resultats/{simulation}/generate', [PDFController::class, 'generatePDF'])->name('generatePDF');
+
+    Route::get("/resultats/{simulation}/test", function (Simulation $simulation){
+        return view('pdf.simulation', compact('simulation'));
+    })->name('test');
 
     Route::get('/dashboard', function () {
         return view('dashboard');

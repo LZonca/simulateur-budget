@@ -3,7 +3,7 @@
     <h1 class="ml-10 text-2xl font-semibold">Bienvenue à la Mairie d'Arnas</h1>
 </div>-->
 
-<main class="mx-10 bg-white ">
+<main class="mx-10 bg-white min-h-screen">
     <section>
         <h2 class="mb-4 text-2xl font-semibold">Présentation de la Mairie</h2>
         <p class="text-gray-700">La mairie d'Arnas est au service de la communauté pour assurer le bien-être et le

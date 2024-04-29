@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="flex items-center bg-green-500">
+    <div class="flex items-center bg-green-500 ">
         <img src="{{ asset('/img/arnas_img.png') }}" alt="Logo" class="h-20 mr-25 w-70">
         <h1 class="ml-10 text-2xl font-semibold">Bienvenue à la Mairie d'Arnas</h1>
     </div>
@@ -13,6 +13,6 @@
     <br>
 
     <x-welcome />
-    
+
     <x-footer />
 </x-guest-layout>

@@ -9,14 +9,14 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    
+
     public function up(): void
     {
         Schema::create('sous_categories', function (Blueprint $table) {
             $table->id('id');
             $table->foreignId('categorie_id')->constrained();
             $table->string('sous_categorie_nom');
-            $table->integer('montant');
+            $table->float('montant');
             $table->timestamps();
         });
     }

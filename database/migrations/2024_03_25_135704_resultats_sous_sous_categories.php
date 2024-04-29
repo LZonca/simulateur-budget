@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('resultats_sous_sous_categories', function (Blueprint $table) {
+            $table->id('id');
             $table->foreignId('simulation_id')->constrained();
             $table->foreignId('sous_sous_categorie_id')->constrained();
-            $table->integer('resultat');
+            $table->foreignId('resultat_sous_categorie_id')->constrained('resultats_sous_categories')->name('fk_resultat_sous_categorie');
+            $table->float('resultat');
             $table->timestamps();
         });
     }

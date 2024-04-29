@@ -12,8 +12,8 @@ class PDFController extends Controller
     public function generatePDF(Simulation $simulation)
     {
         // Create Dompdf instance
-        $pdf = PDF::loadView('pdf.inscription', compact('inscription', 'qr_code'));
+        $pdf = PDF::loadView('pdf.simulation', compact('simulation'));
         // dd($pdf, $inscription);
-        return $pdf->download( $simulation->simulations_nom .'.pdf');
+        return $pdf->download( $simulation->simulation_nom .'.pdf');
     }
 }

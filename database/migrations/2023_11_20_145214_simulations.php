@@ -13,9 +13,8 @@ return new class extends Migration
 {
     Schema::create('simulations', function (Blueprint $table) {
         $table->id('id');
-        $table->string('simulations_nom');
-        $table->date('simulations_date');
-        $table->string('simulations_resultats');
+        $table->string('simulation_nom');
+        $table->date('simulation_date')->default(now());
         $table->foreignId('utilisateur_id')->constrained('users'); // Use 'users' instead of 'utilisateurs'
         $table->timestamps();
     });

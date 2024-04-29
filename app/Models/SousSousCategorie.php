@@ -9,10 +9,13 @@ class SousSousCategorie extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['sous_sous_categorie_nom', 'categorie_id', 'montant'];
+    protected $fillable = ['sous_sous_categorie_nom', 'sous_categorie_id', 'montant'];
 
-
-    public function owner()
+    public function results()
+    {
+        return $this->hasMany(SimulationResult::class);
+    }
+    public function sousCategorie()
     {
         return $this->belongsTo(SousCategorie::class, 'sous_categorie_id');
     }

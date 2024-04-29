@@ -11,8 +11,12 @@ class SousCategorie extends Model
 
     protected $fillable = ['sous_categorie_nom', 'categorie_id', 'montant'];
 
+    public function results()
+    {
+        return $this->hasMany(SimulationResult::class);
+    }
 
-    public function owner()
+    public function categorie()
     {
         return $this->belongsTo(Categorie::class, 'categorie_id');
     }

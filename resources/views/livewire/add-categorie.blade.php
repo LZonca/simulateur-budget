@@ -11,7 +11,7 @@
         <div wire:click="toggleCategory({{ $category->id }})" class="max-w-6xl p-6 mx-auto  shadow-xl text-center flex justify-between items-center cursor-pointer transition  rounded-lg " style="background-color: {{ $category->color }}">
             <div class="flex flex-row gap-4 align-end">
                 <span>{{ $category->categorie_nom }}</span>
-                {{--<x-mary-button @click="$wire.showCategorieModal = true" label="Edit Category" class="border bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-700" />--}}
+                <x-mary-button  label="Edit Category" link="{{route('categories.edit', $category->id)}}" class="border bg-blue-500 text-white rounded-lg py-3 font-semibold hover:bg-blue-700" />
                 <x-mary-button wire:click.stop="deleteCategory({{ $category->id }})" icon="o-trash" class="border bg-black text-white rounded-lg py-3 font-semibold hover:bg-red-700" />
             </div>
 

@@ -18,6 +18,7 @@ class Simulateur extends Component
 {
     use Toast;
     public $values = [];
+    public $isLoading = false; // Add a new property for the loading state
 
     public $initialTotalBudget;
     public $categories;
@@ -92,9 +93,9 @@ class Simulateur extends Component
         );
 
         if ($validator->fails()) { // Check if the validation fails
-            $this->toast($validator->errors()->first(), 'error');
-            return; // Return early if the validation fails
+            $this->error($validator->errors()->first(), 'error');
         }
+        $this->isLoading = true; // Set the loading state to true at the start of the method
 
         $currentSum = array_sum($this->values['categories']);
 
@@ -106,7 +107,7 @@ class Simulateur extends Component
 
         // If the sum of the current values is greater than the sum of the initial values, return early
         if ($currentSum > $initialSum) {
-            $this->toast('The sum of the current values is greater than the sum of the initial values.', 'error');
+            $this->warning('The sum of the current values is greater than the sum of the initial values.', 'Warning');
             return;
         }
 
@@ -119,9 +120,10 @@ class Simulateur extends Component
         // Save the simulation to the database
         try {
             $simulation->save();
-            $this->toast('Simulation saved successfully.', 'success');
+            $this->success('Simulation enregistrée avec succès.', 'Succès');
         } catch (\Exception $e) {
-            $this->toast('Failed to save simulation: ' . $e->getMessage(), 'error');
+            $this->error('Erreur lors de sauvegarde de la simulation: ' . $e->getMessage(), 'Erreur');
+
             return;
         }
 
@@ -151,8 +153,9 @@ class Simulateur extends Component
                 }
             }
         }
+        $this->isLoading = false; // Set the loading state back to false at the end of the method
 
-        return $this->redirectRoute('test', ['simulation' => $simulation->id]);
+        $this->redirectRoute('resultat', ['simulation' => $simulation->id]);
 
     }
 

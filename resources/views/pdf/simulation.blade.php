@@ -45,6 +45,8 @@
 <body>
 
 <h1>Simulation {{$simulation->simulation_nom}}</h1>
+<h2>Date: {{$simulation->simulation_date}}</h2>
+<h3>Budget libre: {{number_format($simulation->available_budget, 0, '', ' ') }}</h3>
 <table class="table-auto w-full">
     <thead>
     <tr>

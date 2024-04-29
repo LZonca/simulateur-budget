@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PDFController;
+use App\Models\Categorie;
 use App\Models\Simulation;
 use App\Models\User;
 use App\Http\Controllers\Controller;
@@ -42,13 +43,17 @@ Route::middleware([
 
     Route::get('/pannel', [Controller::class, 'pannel'])->name('pannel');
 
+    Route::get('/categories/{categorie}/edit', function (Categorie $categorie){
+        return view('livewire.edit-category', compact('categorie'));
+    })->name('categories.edit');
+
     Route::get('/super-admin-pannel', [Controller::class, 'superAdminPannel'])->name('super-admin-pannel');
 
     Route::get('/resultats/{simulation}/generate', [PDFController::class, 'generatePDF'])->name('generatePDF');
 
-    Route::get("/resultats/{simulation}/test", function (Simulation $simulation){
+    Route::get("/resultats/{simulation}", function (Simulation $simulation){
         return view('pdf.simulation', compact('simulation'));
-    })->name('test');
+    })->name('resultat');
 
     Route::get('/dashboard', function () {
         return view('dashboard');

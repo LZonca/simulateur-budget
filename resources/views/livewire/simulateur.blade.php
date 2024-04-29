@@ -11,9 +11,9 @@
     @foreach($categories as $categorie)
         <div x-data="{ open: false }" class="border border-base-300 " style="background-color: {{$categorie->color}}">
             <div @click="open = !open" class="text-xl font-medium p-6 cursor-pointer" >
-                {{ucfirst($categorie->categorie_nom)}} - ({{number_format(array_sum(array_filter($this->values['subCategories'], function($key) use ($categorie) {
+                <span class="bg-base-100 outline-1 rounded p-3">{{ucfirst($categorie->categorie_nom)}} - ({{number_format(array_sum(array_filter($this->values['subCategories'], function($key) use ($categorie) {
     return in_array($key, array_column($categorie->sousCategories->toArray(), 'id'));
-}, ARRAY_FILTER_USE_KEY)), 0, '', ' ')  }}€)
+}, ARRAY_FILTER_USE_KEY)), 0, '', ' ')  }}€)</span>
                 <x-mary-icon x-show="open" name="c-chevron-down"/>
                 <x-mary-icon x-show="!open" name="s-chevron-left"/>
             </div>
@@ -21,7 +21,7 @@
                 @foreach($categorie->sousCategories as $sousCategorie)
                     <div x-data="{ openSub: false }" class="border border-base-300 bg-base-200 m-8" style="background-color: {{$categorie->color}}">
                         <div @click="openSub = !openSub" class="text-lg font-medium cursor-pointer m-8" style="background-color: {{$categorie->color}}">
-                            {{ucfirst($sousCategorie->sous_categorie_nom)}}
+                            <span class="bg-base-100 outline-1 rounded p-3">{{ucfirst($sousCategorie->sous_categorie_nom)}}
                             @if(count($sousCategorie->sousSousCategories) > 0)
                                 - ({{ number_format(array_sum($this->values['subSubCategories']), 0, '', ' ') }}€)
                                 <x-mary-icon x-show="open" name="c-chevron-down"/>
@@ -29,6 +29,7 @@
                             @else
                                 - ({{ number_format($this->values['subCategories'][$sousCategorie->id], 0, '', ' ') }}€)
                             @endif
+                            </span>
                         </div>
                         <div x-show="openSub" class="flex flex-col justify-center ">
                             <div class="flex flex-col justify-between items-center mt-2 border border-gray-950 p-8 bg-base-100" >
@@ -56,7 +57,7 @@
                             @foreach($sousCategorie->sousSousCategories as $sousSousCategorie)
                                 <div class="flex flex-col justify-between items-center  mt-2 ">
 
-                                    <span>{{ ucfirst($sousSousCategorie->sous_sous_categorie_nom) }} - {{ number_format($this->values['subSubCategories'][$sousSousCategorie->id], 0, '', ' ') }}€</span>
+                                    <span class="bg-base-100 outline-1 rounded p-3">{{ ucfirst($sousSousCategorie->sous_sous_categorie_nom) }} - {{ number_format($this->values['subSubCategories'][$sousSousCategorie->id], 0, '', ' ') }}€</span>
                                     <span class="text-sm">{{ number_format($this->getDifference($sousSousCategorie->id, 'subSubCategories'), 0, '', ' ') }}€</span>
 
                                     <div class=" flex flex-row mx-6 p-8">
@@ -91,6 +92,6 @@
             </div>
         @endif
         <x-mary-input label="Nom du resultat" placeholder="Nom du resultat" wire:model="nomResultat" class="value-input w-2/3 px-2 py-1 border rounded-md" />
-        <x-mary-button wire:click="saveSimulation"  label="Enregistrer" class="px-2 py-1 bg-blue-500 text-white rounded-md" />
+        <x-mary-button wire:click="saveSimulation"  label="Enregistrer" class="px-2 py-1 bg-blue-500 text-white rounded-md" spinner/>
     </div>
 </section>

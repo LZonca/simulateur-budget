@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
 
 use App\Models\Categorie;
-use App\Models\sousCategorie;
-use App\Models\sousSousCategorie;
+use App\Models\SousCategorie;
+use App\Models\SousSousCategorie;
 use Mary\Traits\Toast;
 
 class Simulateur extends Component
@@ -183,7 +183,7 @@ class Simulateur extends Component
         $this->values[$type][$id] = max($newValue, 0); // Ensure the value is above or equal to 0
 
         if ($type === 'subCategories' || $type === 'subSubCategories') {
-            $parentCategory = $type === 'subCategories' ? sousCategorie::find($id) : sousSousCategorie::find($id)->sousCategorie;
+            $parentCategory = $type === 'subCategories' ? SousCategorie::find($id) : SousSousCategorie::find($id)->sousCategorie;
             $this->values['categories'][$parentCategory->categorie_id] += $value;
         }
 
@@ -201,7 +201,7 @@ class Simulateur extends Component
         $this->values[$type][$id] = $newValue;
 
         if ($type === 'subCategories' || $type === 'subSubCategories') {
-            $parentCategory = $type === 'subCategories' ? sousCategorie::find($id) : sousSousCategorie::find($id)->sousCategorie;
+            $parentCategory = $type === 'subCategories' ? SousCategorie::find($id) : SousSousCategorie::find($id)->sousCategorie;
             $this->values['categories'][$parentCategory->categorie_id] -= $value;
             if ($this->values['categories'][$parentCategory->categorie_id] < 0) {
                 $this->values['categories'][$parentCategory->categorie_id] = 0;
@@ -222,9 +222,9 @@ class Simulateur extends Component
             case 'categories':
                 return Categorie::find($id)->montant;
             case 'subCategories':
-                return sousCategorie::find($id)->montant;
+                return SousCategorie::find($id)->montant;
             case 'subSubCategories':
-                return sousSousCategorie::find($id)->montant;
+                return SousSousCategorie::find($id)->montant;
         }
     }
 }

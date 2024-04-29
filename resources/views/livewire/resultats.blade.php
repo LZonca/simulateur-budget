@@ -15,7 +15,7 @@
                         <tr>
                             <td class="border border-gray-300 px-4 py-2">{{ $simulation->simulation_nom }}</td>
                             <td class="border border-gray-300 px-4 py-2">{{ $simulation->simulation_date }}</td>
-                            <td class="border border-gray-300 px-4 py-2"><x-mary-button icon="o-eye" link="{{route('resultat', $simulation->id)}}" /></td>
+                            <td class="border border-gray-300 px-4 py-2"><x-mary-button icon="o-eye" link="{{route('resultat', $simulation->id)}}" external /></td>
                             <td class="border border-gray-300 px-4 py-2">
                                 <a target='_blank' href="{{ route('generatePDF', $simulation) }}">
                                     <x-mary-button wire:click="generateResult({{ $simulation->id }})" label="Télécharger" icon-right="o-arrow-down-tray" spinner />

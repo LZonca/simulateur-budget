@@ -87,14 +87,9 @@ class Simulateur extends Component
     }
     public function saveSimulation()
     {
-        $validator = Validator::make(
-            ['nomResultat' => $this->nomResultat], // Add the data to validate
-            ['nomResultat' => 'required|max:255'],
-        );
-
-        if ($validator->fails()) { // Check if the validation fails
-            $this->error($validator->errors()->first(), 'error');
-        }
+        $this->validate([
+            'nomResultat' => 'required|string|max:255',
+        ]);
         $this->isLoading = true; // Set the loading state to true at the start of the method
 
         $currentSum = array_sum($this->values['categories']);
@@ -107,7 +102,7 @@ class Simulateur extends Component
 
         // If the sum of the current values is greater than the sum of the initial values, return early
         if ($currentSum > $initialSum) {
-            $this->warning('The sum of the current values is greater than the sum of the initial values.', 'Warning');
+            $this->warning('La somme des montants actuels est plus grande que le budget.', 'Warning');
             return;
         }
 
